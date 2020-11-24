@@ -10,6 +10,7 @@ import CoreData
 
 class TableViewController: UITableViewController {
     
+    var context: NSManagedObjectContext!
     var tasks: [Task] = []
 
     @IBAction func saveTask(_ sender: UIBarButtonItem) {
@@ -31,7 +32,6 @@ class TableViewController: UITableViewController {
     }
     
     private func saveTask(withTitle title: String) {
-        let context = getContext()
         
         guard let entity = NSEntityDescription.entity(forEntityName: "Task", in: context) else { return }
         let taskObject = Task(entity: entity, insertInto: context)
@@ -48,10 +48,8 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let context = getContext()
         
-        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        /*let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         if let results = try? context.fetch(fetchRequest) {
             for object in results {
                 context.delete(object)
@@ -62,18 +60,17 @@ class TableViewController: UITableViewController {
             try context.save()
         } catch let error as NSError {
             print(error.localizedDescription)
-        }
+        }*/
     }
     
-    private func getContext() -> NSManagedObjectContext {
+    /*private func getContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
-    }
+    }*/
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let context = getContext()
         
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: false)
@@ -82,7 +79,7 @@ class TableViewController: UITableViewController {
         do {
             tasks = try context.fetch(fetchRequest)
         } catch let error as NSError {
-            
+            print(error.localizedDescription)
         }
     }
 
