@@ -63,10 +63,6 @@ class TableViewController: UITableViewController {
         }*/
     }
     
-    /*private func getContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
-    }*/
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

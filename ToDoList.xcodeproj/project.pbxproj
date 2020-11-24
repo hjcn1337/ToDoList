@@ -14,6 +14,7 @@
 		52FF0483256D77D300235231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52FF0482256D77D300235231 /* Assets.xcassets */; };
 		52FF0486256D77D300235231 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FF0484256D77D300235231 /* LaunchScreen.storyboard */; };
 		52FF0491256D7A0E00235231 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF0490256D7A0E00235231 /* TableViewController.swift */; };
+		52FF0495256D889E00235231 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF0494256D889E00235231 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		52FF0485256D77D300235231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52FF0487256D77D300235231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52FF0490256D7A0E00235231 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		52FF0494256D889E00235231 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				52FF0487256D77D300235231 /* Info.plist */,
 				52FF047F256D77D000235231 /* ToDoList.xcdatamodeld */,
 				52FF0490256D7A0E00235231 /* TableViewController.swift */,
+				52FF0494256D889E00235231 /* CoreDataStack.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FF0495256D889E00235231 /* CoreDataStack.swift in Sources */,
 				52FF0477256D77D000235231 /* AppDelegate.swift in Sources */,
 				52FF0479256D77D000235231 /* SceneDelegate.swift in Sources */,
 				52FF0481256D77D000235231 /* ToDoList.xcdatamodeld in Sources */,
