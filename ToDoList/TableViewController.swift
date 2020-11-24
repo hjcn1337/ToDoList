@@ -105,12 +105,13 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let task = tasks[indexPath.row] as? Task, editingStyle == .delete else { return }
         
+        tasks.remove(at: indexPath.row)
+        
         context.delete(task)
         
         do {
             try context.save()
-            //tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.reloadData()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         } catch let error as NSError {
             print(error.localizedDescription)
         }
